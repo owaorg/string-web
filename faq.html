@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STRING · FAQ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <video class="bg-video" autoplay muted loop playsinline>
+        <source src="background.mp4" type="video/mp4">
+    </video>
+    <div class="bg-blur"></div>
+
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="header-logo">STRING</a>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="header-nav" id="headerNav">
+                <a href="index.html" class="nav-link">Документация</a>
+                <a href="about.html" class="nav-link">О String</a>
+                <a href="faq.html" class="nav-link active">FAQ</a>
+                <a href="photos.html" class="nav-link">Фотографии</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="faq-main">
+        <div class="faq-container">
+            <div class="faq-header">
+                <h1 class="faq-title">Часто задаваемые вопросы</h1>
+                <p class="faq-subtitle">Ответы на основные вопросы о STRING</p>
+            </div>
+
+            <section class="faq-content">
+                <!-- Question 1 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 class="question-text">Нужен ли установленный Python/Golang для запуска инструмента?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Нет, все нужное для запуска упаковывается внутри .exe файла. Вам достаточно скачать одноединственный файл — и программа будет работать без каких-либо дополнительных установок.</p>
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 class="question-text">По каким источникам идет поиск?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Поиск по базам происходит через API "DepSearch", для OSINT анализа используются сторонние бесплатные API сервисы. Это позволяет нам предоставлять актуальную и проверенную информацию.</p>
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 class="question-text">Для чего мне покупать инструмент если там бесплатные сервисы есть?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Вы платите за простоту и удобство использования. Разработка и поддержка лежит на разработчике, что позволяет вам сосредоточиться на результатах, а не на технических деталях. STRING — это готовый, оптимизированный инструмент, а не набор разрозненных сервисов.</p>
+                    </div>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 class="question-text">Насколько String защищен от взлома и анализа кода?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="security-details">
+                            <p>Мы используем многоуровневую систему защиты, которая делает попытки «кряка» бессмысленными.</p>
+
+                            <h4 class="security-subtitle">Локальный OSINT-движок и Серверная логика</h4>
+                            <p>Архитектура String разделена на две части:</p>
+                            <ul class="security-list">
+                                <li><strong>Клиентская часть (.EXE):</strong> Внутри исполняемого файла находится мощный движок для работы с OSINT-инструментами и системная логика. Мы оптимизируем этот код, чтобы он работал максимально быстро на вашем железе.</li>
+                                <li><strong>Серверный шлюз (API):</strong> Самая ценная часть — доступ к платным базам данных и эксклюзивным API — полностью вынесена на наш сервер.</li>
+                            </ul>
+
+                            <h4 class="security-subtitle">Почему «кряк» не даст бесплатного доступа?</h4>
+                            <p>Даже если злоумышленник попытается декомпилировать или модифицировать локальный .exe файл, он столкнется с непреодолимым барьером:</p>
+                            <ul class="security-list">
+                                <li><strong>Система токенов:</strong> Доступ к платным функциям поиска работает через защищенные запросы к серверу. Без валидного Premium-токена сервер просто не отдаст данные.</li>
+                                <li><strong>Бесполезность взлома:</strong> Модификация локального кода не дает доступа к серверным ресурсам. Вы можете «вскрыть» оболочку, но вы не сможете заставить сервер бесплатно отвечать на запросы платного API.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">STRING © 2026</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        // FAQ Toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const item = this.parentElement;
+                const answer = item.querySelector('.faq-answer');
+                const toggle = this.querySelector('.faq-toggle');
+                
+                item.classList.toggle('active');
+                
+                if (item.classList.contains('active')) {
+                    toggle.textContent = '−';
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                } else {
+                    toggle.textContent = '+';
+                    answer.style.maxHeight = '0';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

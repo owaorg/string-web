@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STRING · О нас</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <video class="bg-video" autoplay muted loop playsinline>
+        <source src="background.mp4" type="video/mp4">
+    </video>
+    <div class="bg-blur"></div>
+
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="header-logo">STRING</a>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="header-nav" id="headerNav">
+                <a href="index.html" class="nav-link">Документация</a>
+                <a href="about.html" class="nav-link active">О String</a>
+                <a href="faq.html" class="nav-link">FAQ</a>
+                <a href="photos.html" class="nav-link">Фотографии</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="about-main">
+        <div class="about-container">
+            <div class="about-header">
+                <h1 class="about-title">О STRING</h1>
+                <p class="about-subtitle">История развития и философия проекта</p>
+            </div>
+
+            <!-- Developer Section -->
+            <section class="developer-section">
+                <div class="developer-card">
+                    <img src="main.jpg" alt="Developer" class="developer-avatar">
+                    <div class="developer-info">
+                        <h3 class="developer-name">Developer</h3>
+                        <p class="developer-handle">@owaqx</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Content -->
+            <section class="about-content">
+                <div class="about-block">
+                    <h2 class="block-title">Что такое String?</h2>
+                    <p class="block-text">
+                        String — это профессиональный софт для работы с данными, выросший из нашего прошлого проекта ACORE. Мы не просто сменили название — мы полностью пересмотрели архитектуру.
+                    </p>
+                    <p class="block-text">
+                        Основная идея String в том, чтобы дать пользователю из Telegram-сообщества инструмент, который работает «из коробки», не требует настройки окружения и при этом выдает максимальную производительность. Мы создаем продукт для тех, кто ценит свое время и безопасность своих данных.
+                    </p>
+                </div>
+
+                <div class="about-block">
+                    <h2 class="block-title">Технологический выбор: Путь к Golang</h2>
+                    <p class="block-text">
+                        Многие спрашивают, почему мы меняем языки программирования «на ходу». Ответ прост — мы ищем идеальный баланс между скоростью работы и защитой софта.
+                    </p>
+                    
+                    <h3 class="block-subtitle">Прощай, интерпретатор</h3>
+                    <p class="block-text">
+                        Изначально String (как и ACORE) создавался на Python. Это было удобно для тестов, но Python медленный и его легко «вскрыть».
+                    </p>
+
+                    <h3 class="block-subtitle">Почему не Java?</h3>
+                    <p class="block-text">
+                        Мы рассматривали переход на Java, но там мы снова столкнулись бы с байт-кодом, который легко декомпилировать.
+                    </p>
+
+                    <h3 class="block-subtitle">Итоговый выбор — Go (Golang)</h3>
+                    <p class="block-text">
+                        Это наш основной вектор развития. Go компилирует программу в бинарный файл. Это дает колоссальный прирост в скорости и делает реверс-инжиниринг (взлом) максимально сложным.
+                    </p>
+                    <p class="block-text">
+                        <strong>Никаких лишних движений:</strong> Вам больше не нужно скачивать библиотеки или ставить Python. Один EXE-файл — и всё работает.
+                    </p>
+                </div>
+
+                <div class="about-block">
+                    <h2 class="block-title">Структура версий и развитие</h2>
+                    <p class="block-text">
+                        Мы постоянно дорабатываем String, поэтому сейчас проект находится в стадии активной миграции:
+                    </p>
+
+                    <h3 class="block-subtitle">Premium версия</h3>
+                    <p class="block-text">
+                        На данный момент работает на Python. Это позволяет нам мгновенно внедрять новые функции по запросам пользователей и проводить бета-тесты. Однако в ближайшее время мы полностью переносим Premium на Golang, чтобы поднять планку производительности и защиты.
+                    </p>
+
+                    <h3 class="block-subtitle">Бесплатная версия</h3>
+                    <p class="block-text">
+                        Мы используем её как полигон для обкатки наших решений на Go. В будущем мы решим, оставить её на Go или вернуть на Python для простоты поддержки, но скорость работы всегда будет в приоритете.
+                    </p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">STRING © 2026</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

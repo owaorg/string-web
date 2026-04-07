@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STRING · Фотографии</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <video class="bg-video" autoplay muted loop playsinline>
+        <source src="background.mp4" type="video/mp4">
+    </video>
+    <div class="bg-blur"></div>
+
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="header-logo">STRING</a>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="header-nav" id="headerNav">
+                <a href="index.html" class="nav-link">Документация</a>
+                <a href="about.html" class="nav-link">О String</a>
+                <a href="faq.html" class="nav-link">FAQ</a>
+                <a href="photos.html" class="nav-link active">Фотографии</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="photos-main">
+        <div class="photos-container">
+            <h1 class="photos-title">Фотографии</h1>
+            <p class="photos-desc">Скриншоты интерфейса STRING</p>
+
+            <div class="photos-grid">
+                <div class="photo-card">
+                    <img src="menu.png" alt="Меню с функциями" class="photo-img">
+                    <p class="photo-caption">Меню с функциями</p>
+                </div>
+
+                <div class="photo-card">
+                    <img src="search.png" alt="Пример поиска" class="photo-img">
+                    <p class="photo-caption">Пример поиска</p>
+                </div>
+
+                <div class="photo-card">
+                    <img src="profil.png" alt="Профиль пользователя" class="photo-img">
+                    <p class="photo-caption">Профиль пользователя</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">STRING © 2026</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

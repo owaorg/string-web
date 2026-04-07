@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STRING · Documentation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <video class="bg-video" autoplay muted loop playsinline>
+        <source src="background.mp4" type="video/mp4">
+    </video>
+    <div class="bg-blur"></div>
+
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="header-logo">STRING</a>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="header-nav" id="headerNav">
+                <a href="index.html" class="nav-link active">Документация</a>
+                <a href="about.html" class="nav-link">О String</a>
+                <a href="faq.html" class="nav-link">FAQ</a>
+                <a href="photos.html" class="nav-link">Фотографии</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <div class="glitch-container">
+                    <h1 class="glitch" data-text="STRING">STRING</h1>
+                </div>
+                <p class="hero-subtitle">МОЩНЫЙ ИНСТРУМЕНТ ДЛЯ ПОИСКА</p>
+            </div>
+        </section>
+
+        <section class="docs-main">
+            <div class="docs-container">
+                <div class="docs-header">
+                    <h2 class="docs-title">Документация</h2>
+                    <p class="docs-desc">Полное руководство по использованию STRING</p>
+                </div>
+
+            <div class="docs-content">
+                <section class="docs-section">
+                    <h2 class="section-heading"><span class="section-icon icon-auth"></span>Авторизация</h2>
+                    <p class="section-note important"><span class="note-icon note-icon-warn"></span>Обязательно: Для работы программы требуется авторизация.<br>Используйте ваш никнейм для входа в систему.</p>
+                    <div class="code-block">
+                        <code>string --auth ваш_никнейм</code>
+                        <p class="code-desc">Сохраняет ваш никнейм для авторизации в системе. После регистрации перезапустите программу.</p>
+                    </div>
+                    <div class="code-block">
+                        <code>string --version</code>
+                        <p class="code-desc">Показывает текущую версию STRING.</p>
+                    </div>
+                </section>
+
+                <section class="docs-section">
+                    <h2 class="section-heading"><span class="section-icon icon-settings"></span>Настройка ПО</h2>
+                    <p class="section-note"><span class="note-icon note-icon-lab"></span>Необязательно — процедура нужна только для вашего удобства.<br>Можно легко вернуться к стандартным настройкам.</p>
+                </section>
+
+                <section class="docs-section">
+                    <h2 class="section-heading"><span class="section-icon icon-interface"></span>Интерфейс и внешний вид</h2>
+                    <div class="code-block">
+                        <code>string --save on/off</code>
+                        <p class="code-desc">Включает или отключает сохранение отчёта после поиска. Отчёт сохраняется в текущей директории в виде TXT-файла с JSON-содержимым.</p>
+                    </div>
+                    <div class="code-block">
+                        <code>string --remove</code>
+                        <p class="code-desc">Сбрасывает все настройки цветов и градиента к заводским значениям.</p>
+                    </div>
+                </section>
+
+                <section class="docs-section">
+                    <h2 class="section-heading"><span class="section-icon icon-gradient"></span>Градиент и цвета</h2>
+                    <div class="code-block">
+                        <code>string --g1 60,60,60 --g2 200,200,200</code>
+                        <p class="code-desc"><strong>g1</strong> — начальный цвет градиента в формате RGB (три числа через запятую).<br><strong>g2</strong> — конечный цвет градиента. Градиент применяется к заголовкам логов.</p>
+                    </div>
+                    <div class="code-block">
+                        <code>string --c1 #808080 --c2 #FFFFFF</code>
+                        <p class="code-desc"><strong>c1</strong> — первый HEX-цвет для интерфейса.<br><strong>c2</strong> — второй HEX-цвет. Используется для статического окрашивания элементов.</p>
+                    </div>
+                </section>
+
+                <section class="docs-section">
+                    <h2 class="section-heading"><span class="section-icon icon-osint"></span>OSINT Анализ</h2>
+                    <p class="section-note"><span class="note-icon note-icon-info"></span>Бесплатные инструменты для сбора открытой информации.<br>Используют публичные API и базы данных.</p>
+
+                    <h3 class="subsection-heading">Анализ номера телефона</h3>
+                    <div class="code-block">
+                        <code>string --phone +79000000000</code>
+                        <p class="code-desc">Определяет оператора, регион, тип номера (мобильный/городской), местоположение. Использует библиотеку phonenumbers и API voxlink.</p>
+                    </div>
+
+                    <h3 class="subsection-heading">WHOIS домена</h3>
+                    <div class="code-block">
+                        <code>string --whois example.com</code>
+                        <p class="code-desc">Анализирует домен: DNS-записи (A, NS, MX, TXT, SOA), репутация через VirusTotal, информация о регистрации.</p>
+                    </div>
+
+                    <h3 class="subsection-heading">Анализ IP-адреса</h3>
+                    <div class="code-block">
+                        <code>string --ip 8.8.8.8</code>
+                        <p class="code-desc">Поиск информации об IP-адресе через базу DepSearch.</p>
+                    </div>
+
+                    <h3 class="subsection-heading">Поиск никнейма</h3>
+                    <div class="code-block">
+                        <code>string --nickname username</code>
+                        <p class="code-desc">Проверяет наличие никнейма на популярных сайтах: GitHub, VK, Pinterest, TikTok, Reddit, Habr, GitLab и пользовательских сайтах.</p>
+                    </div>
+                    <div class="code-block">
+                        <code>string --add-website https://example.com/user/</code>
+                        <p class="code-desc">Добавляет сайт в список для поиска никнеймов. Сайт должен содержать место для подстановки никнейма в конце URL.</p>
+                    </div>
+
+                    <h3 class="subsection-heading">Декодирование координат</h3>
+                    <div class="code-block">
+                        <code>string --lat 55.7558 --lon 37.6173</code>
+                        <p class="code-desc">Преобразует географические координаты в адрес. Использует Nominatim OpenStreetMap.</p>
+                    </div>
+
+                    <h3 class="subsection-heading">Проверка прокси</h3>
+                    <div class="code-block">
+                        <code>string --public-proxy 164.90.151.28:3128</code>
+                        <p class="code-desc">Проверяет работоспособность публичного HTTP-прокси.</p>
+                    </div>
+                    <div class="code-block">
+                        <code>string --private-proxy proxy:port:login:password</code>
+                        <p class="code-desc">Проверяет приватный прокси с авторизацией. Формат: адрес:порт:логин:пароль.</p>
+                    </div>
+                    <div class="code-block">
+                        <code>string --proxy-check C:/path/to/proxy.txt</code>
+                        <p class="code-desc">Проверяет список прокси из файла.</p>
+                    </div>
+                </section>
+
+                <section class="docs-section">
+                    <h2 class="section-heading"><span class="section-icon icon-database"></span>Поиск по базам (DepSearch)</h2>
+                    <p class="section-note important"><span class="note-icon note-icon-warn"></span>Важно: Поиск происходит по платному источнику DepSearch.<br>Требуется активная подписка и авторизация.</p>
+                    
+                    <h3 class="subsection-heading">Поиск по номеру телефона</h3>
+                    <div class="code-block">
+                        <code>string --api-phone +79000000000 --api depsearch</code>
+                        <p class="code-desc">Поиск по номеру телефона в базе DepSearch. Требуется параметр <strong>--api depsearch</strong>.</p>
+                    </div>
+
+                    <h3 class="subsection-heading">Поиск по ФИО</h3>
+                    <div class="code-block">
+                        <code>string --api-people Иванов Иван Иванович</code>
+                        <p class="code-desc">Поиск по ФИО в базе DepSearch.</p>
+                    </div>
+
+                    <h3 class="subsection-heading">Поиск по email</h3>
+                    <div class="code-block">
+                        <code>string --api-mail user@example.com --api depsearch</code>
+                        <p class="code-desc">Поиск по почтовому адресу в базе DepSearch. Требуется параметр <strong>--api depsearch</strong>.</p>
+                    </div>
+
+                    <h3 class="subsection-heading">Поиск по VIN-номеру</h3>
+                    <div class="code-block">
+                        <code>string --api-vin 1FAFP53U7YG164887</code>
+                        <p class="code-desc">Поиск по VIN-номеру автомобиля. Возвращает историю авто.</p>
+                    </div>
+
+                    <h3 class="subsection-heading">Поиск по паролю</h3>
+                    <div class="code-block">
+                        <code>string --api-pass password123</code>
+                        <p class="code-desc">Поиск утечек пароля в базах данных.</p>
+                    </div>
+
+                    <h3 class="subsection-heading">Поиск по СНИЛС</h3>
+                    <div class="code-block">
+                        <code>string --api-snils 541-251-383 52</code>
+                        <p class="code-desc">Поиск по номеру СНИЛС.</p>
+                    </div>
+
+                    <h3 class="subsection-heading">Поиск по ИНН</h3>
+                    <div class="code-block">
+                        <code>string --api-inn 37507352790</code>
+                        <p class="code-desc">Поиск по ИНН (индивидуальный номер налогоплательщика).</p>
+                    </div>
+
+                    <h3 class="subsection-heading">Поиск по профилю ВКонтакте</h3>
+                    <div class="code-block">
+                        <code>string --api-vk https://vk.com/username</code>
+                        <p class="code-desc">Поиск информации по ссылке на профиль VK.</p>
+                    </div>
+
+                    <h3 class="subsection-heading">Поиск по IP-адресу</h3>
+                    <div class="code-block">
+                        <code>string --api-ip 8.8.8.8</code>
+                        <p class="code-desc">Поиск по IP-адресу в базе DepSearch.</p>
+                    </div>
+                </section>
+
+                <section class="docs-section">
+                    <h2 class="section-heading"><span class="section-icon icon-tools"></span>Дополнительные инструменты</h2>
+                    
+                    <h3 class="subsection-heading">Обфускация Python-файлов</h3>
+                    <div class="code-block">
+                        <code>string --obf script.py</code>
+                        <p class="code-desc">Создаёт обфусцированную копию файла <strong>script_string.py</strong>. Код кодируется в base64 и упаковывается в exec-обёртку.</p>
+                    </div>
+                </section>
+
+                <section class="docs-section">
+                    <h2 class="section-heading"><span class="section-icon icon-help"></span>Справка</h2>
+                    <div class="code-block">
+                        <code>string --shelp</code>
+                        <p class="code-desc">Выводит в консоль краткую справку по всем доступным командам.</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">STRING © 2026</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
